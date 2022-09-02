@@ -1,0 +1,19 @@
+body {
+  font-family: "Mulish", sans-serif;
+  background-color: #858585;
+}
+
+.navbar-nav a {
+  background-color: black;
+}
+
+.active {
+  border-bottom: 5px solid blue;
+}
+
+nav ul li :hover {
+  background-color: white;
+  color: black !important;
+  font-weight: 700;
+  border-bottom: 3px solid rgba(29, 205, 218, 0.877);
+}
