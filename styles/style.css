@@ -1,6 +1,6 @@
 body {
   font-family: "Mulish", sans-serif;
-  background-color: #858585;
+  background-color: #6960601f;
 }
 
 .navbar-nav a {
@@ -17,3 +17,4 @@ nav ul li :hover {
   font-weight: 700;
   border-bottom: 3px solid rgba(29, 205, 218, 0.877);
 }
+
