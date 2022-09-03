@@ -17,6 +17,10 @@
     <!-- ======> Favicon ========> -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
+
+    <!-- =====> Font Awesome ====> -->
+    <script src="https://kit.fontawesome.com/b0a7b06214.js" crossorigin="anonymous"></script>
+
      <!-- =======> Style Sheet =========> -->
      <link rel="stylesheet" href="styles/style.css">
 
@@ -76,10 +80,51 @@
           <!-- ========> Total News Found ======> -->
 
           <div id="total-news-count" class="bg-light py-4 container text-center rounded">
-            <h3 class="fw-bolder"><Span id="news-found" class="text-info fw-bold pe-4"></Span> News Found For This <span id="category-name" class="text-info fw-bold">Category</span></h3>
+            <h3 class="fw-bolder"><Span id="news-found" class="text-info fw-bold pe-4"></Span> News Found For This Category<span id="category-name" class="text-info fw-bold">
+
+            </span>
+          </h3>
           </div>
 
 
+
+          <!-- =====> Sort By Section  =====> -->
+
+          <section class="mt-5 container">
+            <div class="d-flex justify-content-around mx-auto" > 
+        
+              <div class="py-4 border pe-5 w-50">
+                <p class="fw-semibold fw-bold d-inline me-4">Sort By Views:</p>
+
+                
+
+                <a class="nav-link dropdown-toggle bg-white px-3 py-1 w-25 d-inline" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Default
+                </a>
+                
+                </div>
+                
+                <div class="py-4 w-50 text-center">
+                  <button type="button" class="btn bg-black text-white me-4">Today's Pick</button>
+                  <button type="button" class="btn btn-secondary">Trending</button>
+                </div>
+                
+             </div>
+              
+              
+         
+            </div>
+  
+          </section>
+
+
+          <!-- =====> Spinner ======> -->
+
+          <div id="spinner" style="height: 10rem;" class="d-flex justify-content-center align-items-center d-none">
+            <div class="spinner-border text-info" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
 
           <!-- ====> News Heading And Thumbnails -->
 
@@ -87,6 +132,9 @@
 
 
           </section>
+
+
+        
 
 
           <!-- ========> Full News Display ========>> -->

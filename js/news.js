@@ -21,23 +21,49 @@ const displayCategories = (categories) => {
     
     `;
     categoryContainer.appendChild(categoryDiv);
+
+
+
+    
   });
 };
 
 loadCategories();
 
+
+    // ======> Function For Spinner ======>
+
+const toogleSpinner = isLoading =>{
+  const loaderArea = document.getElementById("spinner");
+
+  if(isLoading){
+    loaderArea.classList.remove('d-none');
+  }
+  else{
+    loaderArea.classList.add('d-none')
+  }
+}
+
+
 // ====>> Loadging News By Category Id =========>>
 
 const loadNews = (categoryId) => {
+
   const url = `https://openapi.programming-hero.com/api/news/category/0${categoryId}`;
 
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayNews(data.data))
     .catch((error) => console.log(error));
+
+   
 };
 
+// ======> Category Wise News Display ======>
+
 const displayNews = (newsList) => {
+
+  
   const newscontainer = document.getElementById("newsHeading-container");
   newscontainer.textContent = "";
 
@@ -46,9 +72,6 @@ const totalNewsFound = document.getElementById("news-found");
   const foundNews = newsList.length
   totalNewsFound.innerText = foundNews;
   
-
-
-// ======> Category Wise News Display ======>
 
   newsList.forEach((news) => {
 
@@ -120,14 +143,14 @@ const totalNewsFound = document.getElementById("news-found");
     
 };
 
+
+
 //  =========> Display Full News ========>
 
 
 const displayFullNews = (newsItem) =>{
   
  
-
-
     //  ====> News Title =====>
     const newsTitle = document.getElementById("news-title")
   newsTitle.innerText = newsItem.title;
@@ -146,7 +169,8 @@ const displayFullNews = (newsItem) =>{
   <img src="images/view.png" class="img-fluid">
   <p class="fw-bold d-inline ps-2">${newsItem.total_view ? newsItem.total_view : "No data available"}</p>
   `;
-    // =======> Full News =======>
+
+    // =======> Full Detail News =======>
    const detailNews = document.getElementById("detail-news");
    detailNews.innerHTML = `<p>${newsItem.details}</p>`
 
@@ -159,3 +183,5 @@ const displayFullNews = (newsItem) =>{
 
 
 loadNews(01);
+
+
