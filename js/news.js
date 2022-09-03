@@ -78,7 +78,7 @@ const displayNews = (newsList) => {
                 </div>
                 <div class="col-4 ps-5 pt-1">
 
-                <button onclick="loadFullNews()" type="button" class="btn btn-dark mx-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Read More</button>
+                <button onclick="loadFullNews('${news._id}')" type="button" class="btn btn-dark mx-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Read More</button>
 
                 
                 </div> 
@@ -98,11 +98,13 @@ const displayNews = (newsList) => {
 // =======> Loading Full News ======>
 
  const loadFullNews = (newsId) =>{
-  const url = `https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a`;
+  const url = `https://openapi.programming-hero.com/api/news/${newsId}
+  `;
 
+  
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayFullNews(data.data))
+    .then((data) => displayFullNews(data.data[0]))
     .catch(error => console.log(error))
     
 };
@@ -110,12 +112,10 @@ const displayNews = (newsList) => {
 //  =========> Display Full News ========>
 
 
-const displayFullNews = (fullNews) =>{
+const displayFullNews = (newsItem) =>{
   
  
-  // const fullNewsContainer = document.getElementById("fullNews-display");
 
-   fullNews.forEach( newsItem =>{
 
     //  ====> News Title =====>
     const newsTitle = document.getElementById("news-title")
@@ -141,8 +141,8 @@ const displayFullNews = (fullNews) =>{
    
 
 
-   })
+ 
 }
 
 
-// displayNews();
+loadNews(01);
