@@ -113,17 +113,27 @@ const displayNews = (newsList) => {
 const displayFullNews = (fullNews) =>{
   
  
-  const fullNewsContainer = document.getElementById("fullNews-display");
+  // const fullNewsContainer = document.getElementById("fullNews-display");
 
    fullNews.forEach( newsItem =>{
 
+    //  ====> News Title =====>
     const newsTitle = document.getElementById("news-title")
-
   newsTitle.innerText = newsItem.title;
   
+    // ======> News Photo =====>
    const photoDiv = document.getElementById("photo-div");
-   photoDiv.innerHTML = `<img src = "${newsItem.image_url}" class=img-fluid> `
+   photoDiv.innerHTML = `<img src = "${newsItem.image_url}" class=img-fluid> `;
 
+
+       // ====> Author Details =====>
+  const authorDetail = document.getElementById("author-detail");
+  authorDetail.innerHTML = `
+  <img src = "${newsItem.author.img}" class="img-fluid w-25 rounded-circle">
+  <p>${newsItem.author.name}</p>
+  <p>Date : ${newsItem.author.published_date.slice(0,10)}</p>
+  `;
+    // =======> Full News =======>
    const detailNews = document.getElementById("detail-news");
    detailNews.innerHTML = `<p>${newsItem.details}</p>`
 
