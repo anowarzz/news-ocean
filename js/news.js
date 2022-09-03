@@ -39,6 +39,9 @@ const displayNews = (newsList) => {
   const newscontainer = document.getElementById("newsHeading-container");
   newscontainer.textContent = "";
 
+  console.log(newsList.length);
+  
+
   newsList.forEach((news) => {
 
     const newsDiv = document.createElement("div");
@@ -67,14 +70,14 @@ const displayNews = (newsList) => {
                     }" class="img-fluid w-25 rounded-circle">
                     <div> </div>
                     <div>
-                    <p class="fw-bold">${news.author.name}</p>
+                    <p class="fw-bold">${news.author.name ? news.author.name : "No data available"}</p>
                     </div>
                 </div>
         
         
                 <div class="col-3 pt-2">
                     <img src="images/view.png" class="img-fluid">
-                    <p class="fw-bold d-inline ps-2">${news.total_view}</p>
+                    <p class="fw-bold d-inline ps-2">${news.total_view ? news.total_view : "No data available"}</p>
                 </div>
                 <div class="col-4 ps-5 pt-1">
 
@@ -126,12 +129,14 @@ const displayFullNews = (newsItem) =>{
    photoDiv.innerHTML = `<img src = "${newsItem.image_url}" class=img-fluid> `;
 
 
-       // ====> Author Details =====>
+       // ====> Author and view Details =====>
   const authorDetail = document.getElementById("author-detail");
   authorDetail.innerHTML = `
   <img src = "${newsItem.author.img}" class="img-fluid w-25 rounded-circle">
-  <p>${newsItem.author.name}</p>
+  <p>${newsItem.author.name ? newsItem.author.name : "No data available"}</p>
   <p>Date : ${newsItem.author.published_date.slice(0,10)}</p>
+  <img src="images/view.png" class="img-fluid">
+  <p class="fw-bold d-inline ps-2">${newsItem.total_view ? newsItem.total_view : "No data available"}</p>
   `;
     // =======> Full News =======>
    const detailNews = document.getElementById("detail-news");
