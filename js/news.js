@@ -36,11 +36,10 @@ const loadNews = (categoryId) => {
 };
 
 const displayNews = (newsList) => {
-  const newscontainer = document.getElementById("news-container");
+  const newscontainer = document.getElementById("newsHeading-container");
   newscontainer.textContent = "";
 
   newsList.forEach((news) => {
-    console.log(news);
 
     const newsDiv = document.createElement("div");
 
@@ -78,7 +77,10 @@ const displayNews = (newsList) => {
                     <p class="fw-bold d-inline ps-2">${news.total_view}</p>
                 </div>
                 <div class="col-4 ps-5 pt-1">
-                <button type="button" class="btn btn-dark mx-end">Read More</button>
+
+                <button onclick="loadFullNews()" type="button" class="btn btn-dark mx-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Read More</button>
+
+                
                 </div> 
 
             </div>
@@ -90,5 +92,47 @@ const displayNews = (newsList) => {
     newscontainer.appendChild(newsDiv);
   });
 };
+
+
+
+// =======> Loading Full News ======>
+
+ const loadFullNews = (newsId) =>{
+  const url = `https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a`;
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayFullNews(data.data))
+    .catch(error => console.log(error))
+    
+};
+
+//  =========> Display Full News ========>
+
+
+const displayFullNews = (fullNews) =>{
+  
+ 
+  const fullNewsContainer = document.getElementById("fullNews-display");
+
+   fullNews.forEach( newsItem =>{
+
+    const newsTitle = document.getElementById("news-title")
+
+  newsTitle.innerText = newsItem.title;
+  
+   const photoDiv = document.getElementById("photo-div");
+   photoDiv.innerHTML = `<img src = "${newsItem.image_url}" class=img-fluid> `
+
+   const detailNews = document.getElementById("detail-news");
+   detailNews.innerHTML = `<p>${newsItem.details}</p>`
+
+   console.log(newsItem);
+   
+
+
+   })
+}
+
 
 // displayNews();
