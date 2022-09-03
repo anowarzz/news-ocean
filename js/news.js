@@ -13,6 +13,8 @@ const displayCategories = (categories) => {
   const categoryContainer = document.getElementById("category-container");
 
   categories.forEach((category) => {
+
+    
     const categoryDiv = document.createElement("Div");
     categoryDiv.innerHTML = `
     <button onclick="loadNews(${category.category_id})" class="btn bg-secondary text-white link- fs-5 btn link-info">${category.category_name}</button>
@@ -24,7 +26,7 @@ const displayCategories = (categories) => {
 
 loadCategories();
 
-// ====>> Loadging News =========>>
+// ====>> Loadging News By Category Id =========>>
 
 const loadNews = (categoryId) => {
   const url = `https://openapi.programming-hero.com/api/news/category/0${categoryId}`;
@@ -39,8 +41,14 @@ const displayNews = (newsList) => {
   const newscontainer = document.getElementById("newsHeading-container");
   newscontainer.textContent = "";
 
-  console.log(newsList.length);
+// Total News Found  by Category Display
+const totalNewsFound = document.getElementById("news-found");
+  const foundNews = newsList.length
+  totalNewsFound.innerText = foundNews;
   
+
+
+// ======> Category Wise News Display ======>
 
   newsList.forEach((news) => {
 
