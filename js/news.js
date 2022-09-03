@@ -57,7 +57,7 @@ newsDiv.innerHTML = `
     <div class="col-md-7">
       <div class="card-body">
         <h5 class="card-title fs-3 fw-bold">${news.title}</h5>
-        <p class="card-text my-4">${news.details.slice(0,400) + '......'}</p>
+        <p class="card-text mt-4 mb-5">${news.details.slice(0,400) + '......'}</p>
 
         <div class="text-center row">
 
@@ -70,16 +70,14 @@ newsDiv.innerHTML = `
           </div>
 
 
-
-          <div class="col-4">
-            Column 2
+          <div class="col-3 pt-2">
+            <img src="images/view.png" class="img-fluid">
+            <p class="fw-bold d-inline ps-2">${news.total_view}</p>
           </div>
-          <div class="col-4">
-            Column 3
+          <div class="col-4 ps-5 pt-1">
+          <button type="button" class="btn btn-dark mx-end">Read More</button>
           </div>
-          <div class="">
-          <button type="button" class="btn btn-dark">Read More</button>
-          </div>
+    
           
       </div>
 
