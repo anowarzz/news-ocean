@@ -95,7 +95,7 @@ newsList.sort((a,b) => {
   return b.total_view - a.total_view;
 });
 
-
+ 
   newsList.forEach((news) => {
 
 
