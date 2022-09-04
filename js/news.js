@@ -12,7 +12,17 @@ const loadCategories = () => {
 const displayCategories = (categories) => {
   const categoryContainer = document.getElementById("category-container");
 
+
+  
+
   categories.forEach((category) => {
+
+
+
+  
+
+  
+
 
     
     const categoryDiv = document.createElement("Div");
@@ -22,7 +32,8 @@ const displayCategories = (categories) => {
     `;
     categoryContainer.appendChild(categoryDiv);
 
-
+    
+  
 
     
   });
@@ -48,6 +59,9 @@ const toogleSpinner = isLoading =>{
 // ====>> Loadging News By Category Id =========>>
 
 const loadNews = (categoryId) => {
+toogleSpinner(true);
+
+
 
   const url = `https://openapi.programming-hero.com/api/news/category/0${categoryId}`;
 
@@ -59,11 +73,12 @@ const loadNews = (categoryId) => {
    
 };
 
+
 // ======> Category Wise News Display ======>
 
 const displayNews = (newsList) => {
-
   
+
   const newscontainer = document.getElementById("newsHeading-container");
   newscontainer.textContent = "";
 
@@ -72,8 +87,17 @@ const totalNewsFound = document.getElementById("news-found");
   const foundNews = newsList.length
   totalNewsFound.innerText = foundNews;
   
+  
+
+// ======> Sorting news by views =====>
+
+newsList.sort((a,b) => {
+  return b.total_view - a.total_view;
+});
+
 
   newsList.forEach((news) => {
+
 
     const newsDiv = document.createElement("div");
 
@@ -125,6 +149,7 @@ const totalNewsFound = document.getElementById("news-found");
     `;
     newscontainer.appendChild(newsDiv);
   });
+  toogleSpinner(false)
 };
 
 
@@ -174,13 +199,13 @@ const displayFullNews = (newsItem) =>{
    const detailNews = document.getElementById("detail-news");
    detailNews.innerHTML = `<p>${newsItem.details}</p>`
 
-   console.log(newsItem);
    
 
 
  
 }
 
+// Loading some news by default ----->
 
 loadNews(01);
 
