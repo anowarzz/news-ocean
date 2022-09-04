@@ -1,0 +1,23 @@
+body {
+    font-family: "Mulish", sans-serif;
+    background-color: #6960601f;
+  }
+  
+  .navbar-nav a {
+    background-color: black;
+  }
+  
+  .active {
+    border-bottom: 5px solid blue;
+  }
+  
+  nav ul li :hover {
+    background-color: white;
+    color: black !important;
+    font-weight: 700;
+    border-bottom: 3px solid rgba(29, 205, 218, 0.877);
+  }
+  
+  footer{
+    background-color: rgb(199, 195, 195);
+  }

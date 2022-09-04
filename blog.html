@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Ocean Blog</title>
+    <title>Ocean Blog</title>
 
-    <link rel="stylesheet" href="styles/style.css">
+  
 
 <!-- =========> Bootstrap CDN ========> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -18,12 +18,20 @@
 
 <!-- ======> Favicon ========> -->
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+ <!-- =====> Font Awesome ====> -->
+ <script src="https://kit.fontawesome.com/b0a7b06214.js" crossorigin="anonymous"></script>
+
+ <!-- StyleSheet -->
+
+ <link rel="stylesheet" href="styles/blog.css">
+
 </head>
 <body>
     
     <header>
         <section>
-            <nav class="navbar navbar-expand-lg pt-4 pb-3">
+            <nav class="navbar navbar-expand-lg pt-4 pb-5">
                 <div class="container-fluid d-flex">
                   <div class="w-100">
                     <a class="navbar-brand" href="index.html">
@@ -51,10 +59,96 @@
                  </div>
                 </div>
               </nav>
+
+              <div class="container">
+                <hr class="border border-secondary m-auto">
+               </div>
         </section>
     </header>
 
+    <main>
+        <section class="container my-5">
+            <!-- Question 1   -->
 
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button fs-3 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      What are the differences between a arrow function and normal function ??
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                       <h4> Normal Function</h4>
+                       <ul>
+                        <li>Inside of a regular JavaScript function, this value (aka the execution context) is dynamic.</li>
+                        <li>The regular function can easily construct objects</li>
+                        <li>Inside the body of a regular function, arguments is a special array-like object containing the list of arguments with which the function has been invoked.</li>
+                       </ul>
+
+                       <h3>Arrow Function</h3>
+                       <ul>
+                        <li>The behavior of this inside of an arrow function differs considerably from the regular function's this behavior. The arrow function doesn't define its own execution context.</li>
+                        <li>Arrow function cannot be used as a constructor.</li>
+                        <li>On the other side, no arguments special keyword is defined inside an arrow function.</li>
+                       </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed fs-3 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      What are the differences Among Map, ForEach, Filter and Find ???
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <h4 class="fw-bold">* Map</h4>
+                      <p>The map() method is used for creating a new array from an existing one, applying a function to each one of the elements of the first array.</p>
+                      <h4 class="fw-bold">* ForEach</h4>
+                      <p>The forEach() array method loops through any array, executing a provided function once for each array element in ascending index order. This function is referred to as a callback function.</p>
+                      <h4 class="fw-bold">* Filter</h4>
+                      <p>The filter() method takes each element in an array and it applies a conditional statement against it. If this conditional returns true, the element gets pushed to the output array. If the condition returns false, the element does not get pushed to the output array.</p>
+                      <h4 class="fw-bold">* Find</h4>
+                      <p>The find() method is an Array.prototype method which takes in a callback function and calls that function for every item within the bound array.
+                      When the callback function evaluates to true, the method returns the current item and breaks the loop. It returns just the first match – any other matches present inside of the array will be ignored.</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed fs-3 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      What is the use of template string in Javascript ???
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <h4 class="fw-bold">The Uses Of Template Literals/Strings in Javascript are : </h4>
+                      <ul>
+                        <li>Multi Line strings can easily be written using template literals.</li>
+                        <li>Template literals provide an easy way to interpolate variables and expressions into strings.</li>
+                        <li>Template literals allow variables in strings.</li>
+                        <li>We can use expressions is strings using Template Literals.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- <footer class="mt-5"> 
+
+        <section class="py-5 text-center fw-bold fs-5"> 
+
+      <p class="pt-5"> All Rights 
+        Reserved By <br> © News Ocean Private Ltd <br> 2022</p>
+      
+
+        </section>
+      </footer> -->
     <!-- Sctipt -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
